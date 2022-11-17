@@ -1,7 +1,7 @@
 # Oskar Svedlund
 # TEINF-20
 # 2022-11-16
-# sonar
+# day 1 of 2021
 
 previous_line = int()
 incresed = int()
