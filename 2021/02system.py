@@ -21,7 +21,6 @@ def down(value):
 def main(forward, depth):
     with open("2021/02input.txt", "r", encoding="utf-8") as reader:
         for line in reader.readlines():
-            print(line)
             if "forward" in line:
                 forward += forward_positions(line)
 
