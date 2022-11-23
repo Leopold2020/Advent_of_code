@@ -8,7 +8,7 @@ incresed = -1
 decresed = int()
 x = 0
 
-with open("2021/01-2input.txt", "r", encoding="utf-8") as f:
+with open("2021/day_1/part_2/01-2input2021.txt", "r", encoding="utf-8") as f:
     count_list = []
     count_list.append(int(f.readline().strip("\n")))
 

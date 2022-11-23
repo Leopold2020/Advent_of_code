@@ -4,7 +4,7 @@
 # day 1 of 2020
 
 result = 0
-with open("2020/01input.txt", "r", encoding="utf-8") as reader:
+with open("2020/day_1/part_1/01-1input2020.txt", "r", encoding="utf-8") as reader:
     lines = reader.readlines()
     for line1 in lines:
         line1 = int(line1)

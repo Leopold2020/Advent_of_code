@@ -3,14 +3,10 @@
 # 2022-11-17
 # day 2 of 2021
 
-def forward_positions(current_forward, aim, value):
-    current_depth = 0
+def forward_positions(value):
     value = value.strip("forward ")
     value = int(value)
-    current_forward += value
-    current_depth += aim * value
-    return current_forward, current_depth
-
+    return value
 
 def up(value):
     value = value.strip("up ")
@@ -22,28 +18,26 @@ def down(value):
     value = int(value)
     return value
 
-def main(forward, depth, aim):
-    with open("2021/02-2input.txt", "r", encoding="utf-8") as reader:
+def main(forward, depth):
+    with open("2021/day_2/part_1/02-1input2021.txt", "r", encoding="utf-8") as reader:
         for line in reader.readlines():
             if "forward" in line:
-                forward, new_depth = forward_positions(forward, aim, line)
-                depth += new_depth
+                forward += forward_positions(line)
 
             elif "up" in line:
-                aim -= up(line)
+                depth -= up(line)
 
 
             elif "down" in line:
-                aim += down(line)
+                depth += down(line)
     
-    return forward, depth, aim
+    return forward, depth
 
 
 if __name__ == "__main__":
     forward = 0
     depth = 0
-    aim = 0
-    forward, depth, aim = main(forward, depth, aim)
+    forward, depth = main(forward, depth)
 
     print(forward, depth)
     print(forward * depth)

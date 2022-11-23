@@ -7,7 +7,7 @@ previous_line = int()
 incresed = int()
 decresed = int()
 
-with open("2021/01input.txt", "r", encoding="utf-8") as f:
+with open("2021/day_1/part_1/01-1input2021.txt", "r", encoding="utf-8") as f:
     previous_line = int(f.readline())
     for line in f.readlines():
         
