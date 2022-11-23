@@ -5,11 +5,17 @@
 
 result = 0
 with open("2020/01input.txt", "r", encoding="utf-8") as reader:
-    for line1 in reader.readlines:
-        for line2 in reader.readlines:
+    lines = reader.readlines()
+    for line1 in lines:
+        line1 = int(line1)
+        for line2 in lines:
+            line2 = int(line2)
 
             if line1 + line2 == 2020:
+                chosen_line1 = line1
+                chosen_line2 = line2
                 result = line1 * line2 
+                print(result)
 
-print(line1, line2)
+print(chosen_line1, chosen_line2)
 print(result)
