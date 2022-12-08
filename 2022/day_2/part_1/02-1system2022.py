@@ -4,40 +4,36 @@
 # Day 2 of 2022
 
 total_score = 0
-round_choice = 1
 
-ROCK = ["A", "Z", 1]
-PAPER = ["B", "X", 2]
-SCISSORS = ["C", "Y", 3]
+ROCK = ["A", "X", 1]
+PAPER = ["B", "Y", 2]
+SCISSORS = ["C", "Z", 3]
 
-def cheeking_case(input): #The idea is that the input is checked and the function returns what you should play to win, to get draw and lose.
-    match input:
-        case "A": return "X", "Z", "Y"
+def value(input1:str, input2:str):
+    points = 0
+    match input2:
+        case "X": points += 1
 
-        case "B": return  "Y", "X", "Z"
+        case "Y": points += 2
+        
+        case "Z": points += 3
 
-        case "C": return "Z", "Y", "X"
+    match input1, input2:
+        case ("A", "Y") | ("B", "Z") | ("C", "X"):
+            points += 6
 
+        case ("A", "X") | ("B", "Y") | ("C", "Z"):
+            points += 3
+
+    return int(points)
 
 with open("2022/day_2/part_1/02-1input2022.txt") as reader:
     lines = reader.readlines()
+    lines = [s.replace("\n", "") for s in lines]
 
     for line in lines:
-        reciving, response = line.split(" ")
+        reciving, response = line.split(" ")        
+        total_score += value(reciving, response)
 
-        match round_choice:
-
-            case 1:
-                used, _, __ = cheeking_case(reciving)
-
-            case 2:
-                pass
-
-            case 3:
-                pass
-        
-        if round_choice == 3: round_choice = 1
-
-        else: round_choice += 1
-
-
+    
+    print(total_score)
