@@ -1,7 +1,7 @@
 # Oskar Svedlund
 # TEINF-20
 # 2022-12-07
-# Day 2 of 2022
+# Day 2 part 2 of 2022
 
 total_score = 0
 
