@@ -11,7 +11,7 @@ def get_number(line:str):
                 numbers.append(int(data))
             else:
                 for number, i in enumerate(spelt_numbers):
-                    if line[pos:len(i)+pos:] == i:
+                    if line[pos:len(i)+pos] == i:
                         numbers.append(number)
     return numbers
 
